@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://saifali.dev"),
+  metadataBase: new URL("https://saif-portfolio-gamma.vercel.app"),
 
   title: {
     default: "Saif Ali | Cloud Security & GRC",
@@ -23,19 +23,20 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Saif Ali is a BS Information Technology student building practical systems across Cloud Security, GRC, Security Operations, automation, and AI-assisted security analysis.",
+    "Saif Ali is a BS Information Technology student focused on Cloud Security, GRC, Security Operations, security automation, and AI-assisted security analysis.",
 
   keywords: [
     "Saif Ali",
     "Cloud Security",
     "GRC",
+    "Cybersecurity",
     "Security Engineering",
     "Security Operations",
-    "Cybersecurity",
-    "Information Technology",
-    "Python",
+    "Security Automation",
     "AI Security",
     "RAG",
+    "Information Technology",
+    "Python",
   ],
 
   authors: [
@@ -46,9 +47,14 @@ export const metadata: Metadata = {
 
   creator: "Saif Ali",
 
+  alternates: {
+    canonical: "/",
+  },
+
   openGraph: {
     type: "website",
     locale: "en_US",
+    url: "/",
     title: "Saif Ali | Cloud Security & GRC",
     description:
       "Portfolio of Saif Ali — BS Information Technology student focused on Cloud Security, GRC, Security Engineering, and practical security systems.",
@@ -59,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Saif Ali | Cloud Security & GRC",
     description:
-      "BS Information Technology student building practical security systems across Cloud Security, GRC, Security Operations, and AI Security.",
+      "BS Information Technology student focused on Cloud Security, GRC, Security Operations, and AI-assisted security analysis.",
   },
 
   robots: {
