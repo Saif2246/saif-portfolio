@@ -1,9 +1,12 @@
+import Image from "next/image";
+
 export default function FeaturedProject() {
   return (
     <section className="section" aria-labelledby="featured-project-title">
       <div className="container">
         <div className="mb-10">
           <p className="eyebrow">02 / Featured Project</p>
+
           <h2 id="featured-project-title" className="section-title">
             KiroTrace
           </h2>
@@ -36,6 +39,7 @@ export default function FeaturedProject() {
                   <p className="font-mono text-xs uppercase tracking-wider text-[var(--accent)]">
                     Detection
                   </p>
+
                   <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
                     Parses and normalizes security logs before applying
                     deterministic detection and correlation logic.
@@ -46,6 +50,7 @@ export default function FeaturedProject() {
                   <p className="font-mono text-xs uppercase tracking-wider text-[var(--accent)]">
                     Evidence
                   </p>
+
                   <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
                     Grounds AI responses in retrieved security evidence rather
                     than relying on unsupported model output.
@@ -56,6 +61,7 @@ export default function FeaturedProject() {
                   <p className="font-mono text-xs uppercase tracking-wider text-[var(--accent)]">
                     Controls
                   </p>
+
                   <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
                     Separates security analysis from controlled tool
                     execution and applies policy checks before execution.
@@ -66,6 +72,7 @@ export default function FeaturedProject() {
                   <p className="font-mono text-xs uppercase tracking-wider text-[var(--accent)]">
                     Auditability
                   </p>
+
                   <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
                     Records security assistant activity through structured
                     audit logging for traceability.
@@ -128,6 +135,58 @@ export default function FeaturedProject() {
                   Designed as a practical security engineering project rather
                   than an enterprise SIEM replacement.
                 </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-[var(--border)] p-7 md:p-10">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent)]">
+                  Demo Evidence
+                </p>
+
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight text-[var(--text-primary)]">
+                  Evidence-Grounded Security Analysis
+                </h3>
+
+                <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">
+                  A live KiroTrace analysis showing retrieved security
+                  telemetry, evidence-grounded assessment, and defensive
+                  recommendations for suspicious SSH authentication activity.
+                </p>
+
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
+                    <p className="font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)]">
+                      Evidence
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold text-[var(--text-primary)]">
+                      Retrieved
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-4">
+                    <p className="font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)]">
+                      Analysis
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold text-[var(--text-primary)]">
+                      Grounded
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface-muted)]">
+                <Image
+                  src="/images/05-kirotrace-evidence.png"
+                  alt="KiroTrace evidence-grounded security analysis showing suspicious SSH authentication activity"
+                  width={1600}
+                  height={900}
+                  className="h-auto w-full"
+                />
               </div>
             </div>
           </div>
