@@ -54,6 +54,20 @@ export default function Projects() {
                 ))}
               </div>
 
+              <div className="mt-7 grid gap-3 border-t border-[var(--border)] pt-5 sm:grid-cols-3">
+                {project.metrics.map((metric) => (
+                  <div key={metric.label}>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                      {metric.label}
+                    </p>
+
+                    <p className="mt-1 text-sm font-semibold text-[var(--text-primary)]">
+                      {metric.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
               <a
                 href={project.href}
                 target="_blank"

@@ -1,9 +1,15 @@
+export type ProjectMetric = {
+  label: string;
+  value: string;
+};
+
 export type Project = {
   number: string;
   title: string;
   category: string;
   description: string;
   technologies: string[];
+  metrics: ProjectMetric[];
   href: string;
   featured: boolean;
 };
@@ -22,9 +28,24 @@ export const projects: Project[] = [
       "MariaDB",
       "Linux",
     ],
+    metrics: [
+      {
+        label: "Workflow",
+        value: "4 Stages",
+      },
+      {
+        label: "Input",
+        value: "Nmap XML",
+      },
+      {
+        label: "Storage",
+        value: "MariaDB",
+      },
+    ],
     href: "/projects/project-1",
     featured: false,
   },
+
   {
     number: "02",
     title: "Network Service Enumeration Tool",
@@ -37,9 +58,24 @@ export const projects: Project[] = [
       "Multithreading",
       "Kali Linux",
     ],
+    metrics: [
+      {
+        label: "Workflow",
+        value: "6 Stages",
+      },
+      {
+        label: "Scanning",
+        value: "TCP",
+      },
+      {
+        label: "Concurrency",
+        value: "Multithreaded",
+      },
+    ],
     href: "/projects/project-2",
     featured: false,
   },
+
   {
     number: "03",
     title: "Automated Firewall & ACL Rule Auditor",
@@ -53,9 +89,24 @@ export const projects: Project[] = [
       "HTML",
       "Kali Linux",
     ],
+    metrics: [
+      {
+        label: "Rules Audited",
+        value: "20",
+      },
+      {
+        label: "Findings",
+        value: "12",
+      },
+      {
+        label: "Risk Score",
+        value: "110",
+      },
+    ],
     href: "/projects/project-3",
     featured: false,
   },
+
   {
     number: "04",
     title: "KiroTrace",
@@ -68,6 +119,20 @@ export const projects: Project[] = [
       "Ollama",
       "RAG",
       "Docker",
+    ],
+    metrics: [
+      {
+        label: "Pipeline",
+        value: "7 Stages",
+      },
+      {
+        label: "Log Sources",
+        value: "3",
+      },
+      {
+        label: "Analysis",
+        value: "Evidence-Grounded",
+      },
     ],
     href: "/projects/project-4",
     featured: true,
