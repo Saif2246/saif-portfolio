@@ -42,7 +42,7 @@ export default function Contact() {
         <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-8 md:p-12">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div>
-              <p className="eyebrow">09 / Contact</p>
+              <p className="eyebrow">10 / Contact</p>
 
               <h2 className="mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-4xl md:text-5xl">
                 Let&apos;s connect around security, engineering, and

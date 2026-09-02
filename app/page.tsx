@@ -8,6 +8,7 @@ import SecurityLab from "@/components/SecurityLab";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import Certifications from "@/components/Certifications";
+import CareerFocus from "@/components/CareerFocus";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -26,6 +27,7 @@ export default function Home() {
         <Skills />
         <Education />
         <Certifications />
+        <CareerFocus />
         <Contact />
       </main>
 
