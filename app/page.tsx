@@ -7,6 +7,7 @@ import EngineeringApproach from "@/components/EngineeringApproach";
 import SecurityLab from "@/components/SecurityLab";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
+import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -24,6 +25,7 @@ export default function Home() {
         <SecurityLab />
         <Skills />
         <Education />
+        <Certifications />
         <Contact />
       </main>
 
