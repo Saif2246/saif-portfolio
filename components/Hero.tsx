@@ -40,6 +40,16 @@ export default function Hero() {
               </a>
 
               <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button button-secondary"
+              >
+                Download Resume
+                <span aria-hidden="true">↓</span>
+              </a>
+
+              <a
                 href="#contact"
                 className="button button-secondary"
               >
