@@ -13,12 +13,12 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex items-center gap-5">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-5">
           <a
             href="https://github.com/Saif2246"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-(--text-muted) transition-colors hover:text-(--text-primary)"
+            className="flex min-h-11 items-center rounded-md px-2 text-xs text-(--text-muted) transition-colors hover:text-(--text-primary) active:text-(--accent) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent) motion-reduce:transition-none"
           >
             GitHub
           </a>
@@ -27,7 +27,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/saif-ali-a22230409/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-(--text-muted) transition-colors hover:text-(--text-primary)"
+            className="flex min-h-11 items-center rounded-md px-2 text-xs text-(--text-muted) transition-colors hover:text-(--text-primary) active:text-(--accent) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent) motion-reduce:transition-none"
           >
             LinkedIn
           </a>

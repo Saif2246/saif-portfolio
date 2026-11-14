@@ -1,11 +1,16 @@
 
 import Link from "next/link";
 import type { Metadata } from "next";
+
 export const metadata: Metadata = {
   title: "Automated Firewall & ACL Rule Auditor | Saif Ali",
   description:
     "A Python-based security auditing tool for analyzing firewall and ACL rules, detecting risky configurations, assessing risk, and generating security reports.",
 };
+
+const touchLinkClass =
+  "inline-flex min-h-11 touch-manipulation items-center justify-center gap-2 rounded-md transition-colors active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)";
+
 const capabilities = [
   "Firewall rule auditing",
   "ACL rule analysis",
@@ -62,30 +67,30 @@ export default function ProjectThreePage() {
   return (
     <main className="min-h-screen bg-(--background) text-(--text-primary)">
       <div className="container">
-        <header className="border-b border-(--border) py-10">
+        <header className="border-b border-(--border) py-6 sm:py-10">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-sm text-(--text-secondary) transition-colors hover:text-(--accent)"
+            className={`${touchLinkClass} justify-start text-sm text-(--text-secondary) hover:text-(--accent)`}
           >
             <span aria-hidden="true">←</span>
             Back to Projects
           </Link>
         </header>
 
-        <section className="py-20 md:py-28">
+        <section className="py-14 sm:py-20 md:py-28">
           <p className="eyebrow">03 / Case Study</p>
 
           <div className="max-w-5xl">
-            <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
+            <h1 className="mt-5 text-3xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
               Automated Firewall & ACL Rule Auditor
             </h1>
 
-            <p className="mt-6 max-w-3xl text-xl leading-8 text-(--text-secondary) md:text-2xl">
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-(--text-secondary) sm:text-xl md:text-2xl">
               Automated analysis of firewall and ACL configurations for
               security risks and compliance considerations.
             </p>
 
-            <p className="mt-7 max-w-3xl text-base leading-8 text-(--text-secondary)">
+            <p className="mt-7 max-w-3xl text-sm leading-7 text-(--text-secondary) sm:text-base sm:leading-8">
               A security automation project designed to analyze firewall and
               ACL rules, identify risky and conflicting configurations,
               evaluate security and compliance considerations, calculate risk,
@@ -106,29 +111,31 @@ export default function ProjectThreePage() {
               ))}
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="https://github.com/Saif2246/CyberSecurity-Portfolio/tree/main/Project_3_Automated_Firewall_ACL_Auditor"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="button button-primary"
+                className="button button-primary min-h-11 touch-manipulation justify-center active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)"
               >
                 View Repository
                 <span aria-hidden="true">↗</span>
               </a>
 
-              <Link href="/#projects" className="button button-secondary">
+              <Link
+                href="/#projects"
+                className="button button-secondary min-h-11 touch-manipulation justify-center active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)"
+              >
                 All Projects
               </Link>
             </div>
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">01 / Overview</p>
-
               <h2 className="section-title">
                 Turning firewall and ACL rules into actionable audit findings.
               </h2>
@@ -141,7 +148,7 @@ export default function ProjectThreePage() {
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
             {[
               {
                 title: "Rule Auditing",
@@ -166,7 +173,7 @@ export default function ProjectThreePage() {
             ].map((item) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-(--border) bg-(--surface) p-7 md:p-8"
+                className="rounded-2xl border border-(--border) bg-(--surface) p-5 transition-colors duration-200 active:border-(--accent) sm:p-7 md:p-8"
               >
                 <h3 className="text-xl font-semibold tracking-tight">
                   {item.title}
@@ -180,11 +187,10 @@ export default function ProjectThreePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">02 / Workflow</p>
-
               <h2 className="section-title">
                 From rule configuration to security report.
               </h2>
@@ -200,7 +206,7 @@ export default function ProjectThreePage() {
             {workflow.map((step) => (
               <article
                 key={step.number}
-                className="grid gap-5 rounded-2xl border border-(--border) bg-(--surface) p-6 md:grid-cols-[70px_240px_1fr] md:items-center md:p-7"
+                className="grid gap-3 rounded-2xl border border-(--border) bg-(--surface) p-5 transition-colors duration-200 active:border-(--accent) sm:gap-5 sm:p-6 md:grid-cols-[70px_240px_1fr] md:items-center md:p-7"
               >
                 <span className="font-mono text-xs text-(--accent)">
                   {step.number}
@@ -218,11 +224,10 @@ export default function ProjectThreePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">03 / Capabilities</p>
-
               <h2 className="section-title">
                 What this project demonstrates.
               </h2>
@@ -234,7 +239,7 @@ export default function ProjectThreePage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             {capabilities.map((capability) => (
               <span
                 key={capability}
@@ -246,11 +251,10 @@ export default function ProjectThreePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
-          <div className="grid gap-10 lg:grid-cols-2">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
             <div>
               <p className="eyebrow">04 / Technical Focus</p>
-
               <h2 className="section-title">
                 Automated firewall and ACL security auditing.
               </h2>
@@ -278,11 +282,11 @@ export default function ProjectThreePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
-          <div className="rounded-3xl border border-(--border) bg-(--surface) p-8 md:p-12">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
+          <div className="rounded-3xl border border-(--border) bg-(--surface) p-6 sm:p-8 md:p-12">
             <p className="eyebrow">05 / Repository</p>
 
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-5 text-2xl font-semibold tracking-tight sm:text-4xl">
               Explore the implementation.
             </h2>
 
@@ -295,7 +299,7 @@ export default function ProjectThreePage() {
               href="https://github.com/Saif2246/CyberSecurity-Portfolio/tree/main/Project_3_Automated_Firewall_ACL_Auditor"
               target="_blank"
               rel="noopener noreferrer"
-              className="button button-primary mt-8"
+              className="button button-primary mt-8 min-h-11 touch-manipulation justify-center active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)"
             >
               Open Project Repository
               <span aria-hidden="true">↗</span>
@@ -303,10 +307,10 @@ export default function ProjectThreePage() {
           </div>
         </section>
 
-        <footer className="border-t border-(--border) py-10">
+        <footer className="border-t border-(--border) py-8 sm:py-10">
           <Link
             href="/#projects"
-            className="text-sm text-(--text-secondary) transition-colors hover:text-(--accent)"
+            className={`${touchLinkClass} justify-start text-sm text-(--text-secondary) hover:text-(--accent)`}
           >
             ← Back to all projects
           </Link>

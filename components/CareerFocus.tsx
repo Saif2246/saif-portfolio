@@ -55,7 +55,7 @@ export default function CareerFocus() {
           {opportunities.map((opportunity) => (
             <article
               key={opportunity.number}
-              className="rounded-2xl border border-(--border) bg-(--surface) p-6 transition-colors duration-200 hover:border-(--border-hover)"
+              className="rounded-2xl border border-(--border) bg-(--surface) p-6 transition-all duration-300 hover:border-(--border-hover) hover:bg-(--surface-hover) active:border-(--border-hover) active:bg-(--surface-hover) motion-reduce:transition-none"
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs text-(--text-muted)">
@@ -76,7 +76,7 @@ export default function CareerFocus() {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-8 rounded-2xl border border-(--border) bg-(--surface) p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="mt-8 grid gap-8 rounded-2xl border border-(--border) bg-(--surface) p-6 transition-colors duration-300 hover:border-(--border-hover) active:border-(--border-hover) motion-reduce:transition-none sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.14em] text-(--text-muted)">
               What I bring
@@ -90,7 +90,7 @@ export default function CareerFocus() {
                 >
                   <span
                     aria-hidden="true"
-                    className="h-1.5 w-1.5 rounded-full bg-(--accent)"
+                    className="h-1.5 w-1.5 shrink-0 rounded-full bg-(--accent)"
                   />
 
                   <span>{strength}</span>
@@ -99,7 +99,10 @@ export default function CareerFocus() {
             </div>
           </div>
 
-          <a href="#contact" className="button button-primary">
+          <a
+            href="#contact"
+            className="button button-primary min-h-11 transition-transform duration-200 active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)"
+          >
             Let&apos;s Connect
             <span aria-hidden="true">→</span>
           </a>

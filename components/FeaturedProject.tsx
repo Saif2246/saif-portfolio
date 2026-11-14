@@ -1,8 +1,7 @@
-
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const pipelineSteps = [
   "Log Collection",
@@ -14,36 +13,68 @@ const pipelineSteps = [
   "Audit & Session Tracking",
 ];
 
+const projectFeatures = [
+  {
+    title: "Detection",
+    description:
+      "Parses and normalizes security logs before applying deterministic detection and correlation logic.",
+  },
+  {
+    title: "Evidence",
+    description:
+      "Grounds AI responses in retrieved security evidence rather than relying on unsupported model output.",
+  },
+  {
+    title: "Controls",
+    description:
+      "Separates security analysis from controlled tool execution and applies policy checks before execution.",
+  },
+  {
+    title: "Auditability",
+    description:
+      "Records security assistant activity through structured audit logging for traceability.",
+  },
+];
+
 export default function FeaturedProject() {
   const [isImageOpen, setIsImageOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const imageButtonRef = useRef<HTMLButtonElement>(null);
+useEffect(() => {
+  if (!isImageOpen) return;
 
-  useEffect(() => {
-    if (!isImageOpen) return;
+  const previousOverflow = document.body.style.overflow;
+  const imageButton = imageButtonRef.current;
 
-    const previousOverflow = document.body.style.overflow;
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === "Escape") {
+      setIsImageOpen(false);
+    }
+  };
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsImageOpen(false);
-      }
-    };
+  document.addEventListener("keydown", handleKeyDown);
+  document.body.style.overflow = "hidden";
+  closeButtonRef.current?.focus();
 
-    document.addEventListener("keydown", handleKeyDown);
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [isImageOpen]);
-
+  return () => {
+    document.removeEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = previousOverflow;
+    imageButton?.focus();
+  };
+}, [isImageOpen]);
   return (
-    <section className="section" aria-labelledby="featured-project-title">
+    <section
+      className="section"
+      aria-labelledby="featured-project-title"
+    >
       <div className="container">
         <div className="mb-10">
           <p className="eyebrow">02 / Featured Project</p>
 
-          <h2 id="featured-project-title" className="section-title">
+          <h2
+            id="featured-project-title"
+            className="section-title"
+          >
             KiroTrace
           </h2>
         </div>
@@ -71,31 +102,10 @@ export default function FeaturedProject() {
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                {[
-                  {
-                    title: "Detection",
-                    description:
-                      "Parses and normalizes security logs before applying deterministic detection and correlation logic.",
-                  },
-                  {
-                    title: "Evidence",
-                    description:
-                      "Grounds AI responses in retrieved security evidence rather than relying on unsupported model output.",
-                  },
-                  {
-                    title: "Controls",
-                    description:
-                      "Separates security analysis from controlled tool execution and applies policy checks before execution.",
-                  },
-                  {
-                    title: "Auditability",
-                    description:
-                      "Records security assistant activity through structured audit logging for traceability.",
-                  },
-                ].map((item) => (
+                {projectFeatures.map((item) => (
                   <div
                     key={item.title}
-                    className="group rounded-xl border border-(--border) bg-(--surface) p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(34,211,238,0.4)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.16)]"
+                    className="group rounded-xl border border-(--border) bg-(--surface) p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(34,211,238,0.4)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.16)] active:border-[rgba(34,211,238,0.4)]"
                   >
                     <p className="font-mono text-xs uppercase tracking-wider text-(--accent)">
                       {item.title}
@@ -111,7 +121,7 @@ export default function FeaturedProject() {
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="/projects/project-4"
-                  className="button button-primary"
+                  className="button button-primary transition-transform duration-200 active:scale-[0.97]"
                 >
                   View Case Study
                   <span aria-hidden="true">→</span>
@@ -121,7 +131,7 @@ export default function FeaturedProject() {
                   href="https://github.com/Saif2246/CyberSecurity-Portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="button button-secondary"
+                  className="button button-secondary transition-transform duration-200 active:scale-[0.97]"
                 >
                   View Repository
                 </a>
@@ -144,9 +154,9 @@ export default function FeaturedProject() {
                 {pipelineSteps.map((step, index) => (
                   <div
                     key={step}
-                    className="group relative flex min-h-19 items-center gap-3 overflow-hidden rounded-xl border border-(--border) bg-(--surface) px-3 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(34,211,238,0.45)] hover:shadow-[0_8px_24px_rgba(34,211,238,0.08)]"
+                    className="group relative flex min-h-19 items-center gap-3 overflow-hidden rounded-xl border border-(--border) bg-(--surface) px-3 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(34,211,238,0.45)] hover:shadow-[0_8px_24px_rgba(34,211,238,0.08)] active:border-[rgba(34,211,238,0.45)]"
                   >
-                    <span className="absolute bottom-0 left-0 h-px w-0 bg-(--accent) shadow-[0_0_8px_var(--accent)] transition-all duration-300 group-hover:w-full" />
+                    <span className="absolute bottom-0 left-0 h-px w-0 bg-(--accent) shadow-[0_0_8px_var(--accent)] transition-all duration-300 group-hover:w-full group-active:w-full" />
 
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[rgba(34,211,238,0.2)] bg-[rgba(34,211,238,0.06)] font-mono text-xs text-(--accent)">
                       {String(index + 1).padStart(2, "0")}
@@ -193,26 +203,28 @@ export default function FeaturedProject() {
                 </p>
 
                 <div className="mt-6 grid grid-cols-2 gap-3">
-                  <div className="rounded-xl border border-(--border) bg-(--surface-muted) p-4 transition-colors duration-300 hover:border-[rgba(34,211,238,0.4)]">
+                  <div className="rounded-xl border border-(--border) bg-(--surface-muted) p-4 transition-colors duration-300 hover:border-[rgba(34,211,238,0.4)] active:border-[rgba(34,211,238,0.4)]">
                     <p className="font-mono text-[10px] uppercase tracking-wider text-(--text-muted)">
                       Evidence
                     </p>
 
                     <div className="mt-2 flex items-center gap-2">
                       <span className="h-2 w-2 rounded-full bg-(--accent) shadow-[0_0_8px_var(--accent)]" />
+
                       <p className="font-mono text-sm font-semibold text-(--text-primary)">
                         RETRIEVED
                       </p>
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-(--border) bg-(--surface-muted) p-4 transition-colors duration-300 hover:border-[rgba(34,211,238,0.4)]">
+                  <div className="rounded-xl border border-(--border) bg-(--surface-muted) p-4 transition-colors duration-300 hover:border-[rgba(34,211,238,0.4)] active:border-[rgba(34,211,238,0.4)]">
                     <p className="font-mono text-[10px] uppercase tracking-wider text-(--text-muted)">
                       Analysis
                     </p>
 
                     <div className="mt-2 flex items-center gap-2">
                       <span className="h-2 w-2 rounded-full bg-(--accent) shadow-[0_0_8px_var(--accent)]" />
+
                       <p className="font-mono text-sm font-semibold text-(--text-primary)">
                         GROUNDED
                       </p>
@@ -233,20 +245,24 @@ export default function FeaturedProject() {
                 </div>
 
                 <button
+                  ref={imageButtonRef}
                   type="button"
                   onClick={() => setIsImageOpen(true)}
                   aria-label="Open KiroTrace evidence screenshot"
-                  className="group relative block w-full cursor-zoom-in overflow-hidden text-left"
+                  aria-haspopup="dialog"
+                  className="group relative block w-full cursor-zoom-in overflow-hidden text-left focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-(--accent) active:scale-[0.99]"
                 >
                   <Image
                     src="/images/05-kirotrace-evidence.png"
                     alt="KiroTrace evidence-grounded security analysis showing suspicious SSH authentication activity"
                     width={1600}
                     height={900}
+                    sizes="(max-width: 1024px) 100vw, 60vw"
                     className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.025]"
                   />
-                  <span className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/35">
-                    <span className="flex items-center gap-2 rounded-lg border border-white/20 bg-black/70 px-4 py-2 font-mono text-xs text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+
+                  <span className="absolute inset-0 flex items-center justify-center bg-black/15 transition-colors duration-300 group-hover:bg-black/35">
+                    <span className="flex items-center gap-2 rounded-lg border border-white/20 bg-black/75 px-4 py-2 font-mono text-xs text-white opacity-100 backdrop-blur-sm transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
                       <span aria-hidden="true">⌕</span>
                       EXPAND EVIDENCE
                     </span>
@@ -260,17 +276,18 @@ export default function FeaturedProject() {
 
       {isImageOpen && (
         <div
-          className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-4 backdrop-blur-md md:p-10"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-3 backdrop-blur-md md:p-10"
           onClick={() => setIsImageOpen(false)}
           role="dialog"
           aria-modal="true"
           aria-label="KiroTrace evidence screenshot preview"
         >
           <button
+            ref={closeButtonRef}
             type="button"
             onClick={() => setIsImageOpen(false)}
             aria-label="Close image preview"
-            className="absolute right-5 top-5 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-2xl text-white transition-colors hover:bg-white/20"
+            className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-2xl text-white transition-colors hover:bg-white/20 active:scale-90 focus-visible:outline-2 focus-visible:outline-white md:right-5 md:top-5"
           >
             ×
           </button>
@@ -284,8 +301,8 @@ export default function FeaturedProject() {
               alt="Expanded KiroTrace evidence-grounded security analysis screenshot"
               width={1600}
               height={900}
-              className="h-auto max-h-[85vh] w-full object-contain"
               sizes="100vw"
+              className="h-auto max-h-[85vh] w-full object-contain"
             />
           </div>
         </div>

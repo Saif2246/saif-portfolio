@@ -40,29 +40,30 @@ export default function Contact() {
         await navigator.clipboard.writeText(text);
         return true;
       } catch {
-        // Use fallback method.
+        // Continue with the fallback method.
       }
     }
 
     const textArea = document.createElement("textarea");
     textArea.value = text;
+    textArea.setAttribute("readonly", "");
     textArea.style.position = "fixed";
     textArea.style.opacity = "0";
     textArea.style.pointerEvents = "none";
 
     document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
 
     let successful = false;
 
     try {
+      textArea.focus();
+      textArea.select();
       successful = document.execCommand("copy");
     } catch {
       successful = false;
+    } finally {
+      document.body.removeChild(textArea);
     }
-
-    document.body.removeChild(textArea);
 
     return successful;
   };
@@ -72,6 +73,7 @@ export default function Contact() {
 
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
 
     setCopied(success);
@@ -88,7 +90,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section">
       <div className="container">
-        <div className="rounded-3xl border border-(--border) bg-(--surface) p-8 md:p-12">
+        <div className="rounded-3xl border border-(--border) bg-(--surface) p-6 sm:p-8 md:p-12">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div>
               <p className="eyebrow">10 / Contact</p>
@@ -113,13 +115,13 @@ export default function Contact() {
                 return (
                   <div
                     key={link.label}
-                    className="group flex items-center justify-between rounded-xl border border-(--border) bg-(--background) px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-(--border-hover)"
+                    className="group flex items-center justify-between rounded-xl border border-(--border) bg-(--background) px-4 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-(--border-hover) active:translate-y-0 active:border-(--border-hover) sm:px-5 motion-reduce:transition-none motion-reduce:hover:transform-none"
                   >
                     <a
                       href={link.href}
                       target={isExternal ? "_blank" : undefined}
                       rel={isExternal ? "noopener noreferrer" : undefined}
-                      className="min-w-0 flex-1"
+                      className="min-w-0 flex-1 rounded-md outline-none focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-(--accent)"
                     >
                       <p className="text-sm font-medium text-(--text-primary)">
                         {link.label}
@@ -134,7 +136,7 @@ export default function Contact() {
                       <button
                         type="button"
                         onClick={handleCopyEmail}
-                        className="ml-4 shrink-0 rounded-lg border border-(--border) px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-(--text-muted) transition-all duration-300 hover:border-(--border-hover) hover:text-(--accent)"
+                        className="ml-3 flex min-h-11 min-w-14 shrink-0 items-center justify-center rounded-lg border border-(--border) px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-(--text-muted) transition-all duration-200 hover:border-(--border-hover) hover:text-(--accent) active:scale-95 active:border-(--border-hover) active:text-(--accent) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--accent) motion-reduce:transition-none sm:ml-4"
                         aria-label="Copy email address"
                       >
                         {copied ? "Copied" : copyError ? "Retry" : "Copy"}
@@ -142,7 +144,7 @@ export default function Contact() {
                     ) : (
                       <span
                         aria-hidden="true"
-                        className="ml-4 shrink-0 text-(--text-muted) transition-all duration-300 group-hover:translate-x-1 group-hover:text-(--accent)"
+                        className="ml-3 shrink-0 text-(--text-muted) transition-all duration-300 group-hover:translate-x-1 group-hover:text-(--accent) group-active:translate-x-1 group-active:text-(--accent) sm:ml-4 motion-reduce:transition-none"
                       >
                         ↗
                       </span>

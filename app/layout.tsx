@@ -40,12 +40,7 @@ export const metadata: Metadata = {
     "Python",
   ],
 
-  authors: [
-    {
-      name: "Saif Ali",
-    },
-  ],
-
+  authors: [{ name: "Saif Ali" }],
   creator: "Saif Ali",
 
   alternates: {
@@ -95,6 +90,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#070b12",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

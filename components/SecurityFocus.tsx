@@ -37,6 +37,7 @@ export default function SecurityFocus() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">01 / Security Focus</p>
+
             <h2
               id="security-focus-title"
               className="section-title"
@@ -56,7 +57,7 @@ export default function SecurityFocus() {
           {securityAreas.map((area) => (
             <article
               key={area.number}
-              className="bg-(--surface) p-7 transition-colors hover:bg-(--surface-hover) md:p-8"
+              className="bg-(--surface) p-7 transition-colors duration-200 hover:bg-(--surface-hover) active:bg-(--surface-hover) md:p-8"
             >
               <div className="mb-8 flex items-center justify-between">
                 <span className="font-mono text-xs text-(--accent)">

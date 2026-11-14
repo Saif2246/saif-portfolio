@@ -86,7 +86,7 @@ export default function Skills() {
             <article
               key={group.title}
               data-reveal-card
-              className="group translate-y-4 rounded-2xl border border-(--border) bg-(--surface) p-6 opacity-0 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-(--border-hover) hover:bg-(--surface-hover) motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none"
+              className="group translate-y-4 rounded-2xl border border-(--border) bg-(--surface) p-5 sm:p-6 opacity-0 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-(--border-hover) hover:bg-(--surface-hover) active:translate-y-0 active:border-(--border-hover) active:bg-(--surface-hover) motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none"
             >
               <div className="flex items-center justify-between gap-4">
                 <h3 className="text-lg font-semibold tracking-tight text-(--text-primary)">
@@ -95,7 +95,7 @@ export default function Skills() {
 
                 <span
                   aria-hidden="true"
-                  className="h-px w-8 bg-(--border-hover) transition-all duration-300 group-hover:w-12 group-hover:bg-(--accent)"
+                  className="h-px w-8 bg-(--border-hover) transition-all duration-300 group-hover:w-12 group-hover:bg-(--accent) group-active:w-12 group-active:bg-(--accent)"
                 />
               </div>
 

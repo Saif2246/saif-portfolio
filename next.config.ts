@@ -14,12 +14,11 @@ const contentSecurityPolicy = [
   "base-uri 'self'",
   "form-action 'self'",
   "object-src 'none'",
-  ...(isProduction ? ["upgrade-insecure-requests"] : []),
-].join("; ");
+  ].join("; ");
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  allowedDevOrigins: ["172.30.32.1"],
+  allowedDevOrigins: ["172.30.32.1", "192.168.100.10"],
   async headers() {
     return [
       {

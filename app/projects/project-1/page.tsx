@@ -1,10 +1,13 @@
+
 import Link from "next/link";
 import type { Metadata } from "next";
+
 export const metadata: Metadata = {
   title: "Network Reconnaissance & Database Analyzer | Saif Ali",
   description:
     "Explore a Python-based network security project using Nmap reconnaissance, XML parsing, port and service analysis, and MariaDB integration.",
 };
+
 const capabilities = [
   "Network reconnaissance automation",
   "Nmap XML output parsing",
@@ -44,34 +47,40 @@ const workflow = [
   },
 ];
 
+const projectRepository =
+  "https://github.com/Saif2246/CyberSecurity-Portfolio/tree/main/Project_1_Network_Reconnaissance_Database_Analyzer";
+
+const touchLinkClass =
+  "inline-flex min-h-11 items-center gap-2 touch-manipulation rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)";
+
 export default function ProjectOnePage() {
   return (
     <main className="min-h-screen bg-(--background) text-(--text-primary)">
       <div className="container">
-        <header className="border-b border-(--border) py-10">
+        <header className="border-b border-(--border) py-6 sm:py-10">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-sm text-(--text-secondary) transition-colors hover:text-(--accent)"
+            className={`${touchLinkClass} text-sm text-(--text-secondary) transition-colors hover:text-(--accent)`}
           >
             <span aria-hidden="true">←</span>
             Back to Projects
           </Link>
         </header>
 
-        <section className="py-20 md:py-28">
+        <section className="py-14 sm:py-20 md:py-28">
           <p className="eyebrow">02 / Case Study</p>
 
           <div className="max-w-5xl">
-            <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
+            <h1 className="mt-5 text-3xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
               Network Reconnaissance & Database Analyzer
             </h1>
 
-            <p className="mt-6 max-w-3xl text-xl leading-8 text-(--text-secondary) md:text-2xl">
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-(--text-secondary) sm:text-xl md:text-2xl">
               Automated network reconnaissance, Nmap analysis, and structured
               security data processing.
             </p>
 
-            <p className="mt-7 max-w-3xl text-base leading-8 text-(--text-secondary)">
+            <p className="mt-7 max-w-3xl text-sm leading-7 text-(--text-secondary) sm:text-base sm:leading-8">
               A Python-based network security project focused on automating
               reconnaissance workflows, parsing Nmap XML results, analyzing
               discovered ports and services, and storing structured scan data
@@ -88,25 +97,28 @@ export default function ProjectOnePage() {
               )}
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
-                href="https://github.com/Saif2246/CyberSecurity-Portfolio/tree/main/Project_1_Network_Reconnaissance_Database_Analyzer"
+                href={projectRepository}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="button button-primary"
+                className="button button-primary inline-flex min-h-11 touch-manipulation items-center justify-center gap-2"
               >
                 View Repository
                 <span aria-hidden="true">↗</span>
               </a>
 
-              <Link href="/#projects" className="button button-secondary">
+              <Link
+                href="/#projects"
+                className="button button-secondary inline-flex min-h-11 touch-manipulation items-center justify-center"
+              >
                 All Projects
               </Link>
             </div>
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">01 / Overview</p>
@@ -148,7 +160,7 @@ export default function ProjectOnePage() {
             ].map((item) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-(--border) bg-(--surface) p-7 md:p-8"
+                className="rounded-2xl border border-(--border) bg-(--surface) p-5 sm:p-7 md:p-8"
               >
                 <h3 className="text-xl font-semibold tracking-tight">
                   {item.title}
@@ -162,7 +174,7 @@ export default function ProjectOnePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">02 / Workflow</p>
@@ -182,7 +194,7 @@ export default function ProjectOnePage() {
             {workflow.map((step) => (
               <article
                 key={step.number}
-                className="grid gap-5 rounded-2xl border border-(--border) bg-(--surface) p-6 md:grid-cols-[70px_240px_1fr] md:items-center md:p-7"
+                className="grid gap-4 rounded-2xl border border-(--border) bg-(--surface) p-5 sm:gap-5 sm:p-6 md:grid-cols-[70px_240px_1fr] md:items-center md:p-7"
               >
                 <span className="font-mono text-xs text-(--accent)">
                   {step.number}
@@ -200,7 +212,7 @@ export default function ProjectOnePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">03 / Capabilities</p>
@@ -228,7 +240,7 @@ export default function ProjectOnePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <p className="eyebrow">04 / Technical Focus</p>
@@ -258,11 +270,11 @@ export default function ProjectOnePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
-          <div className="rounded-3xl border border-(--border) bg-(--surface) p-8 md:p-12">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
+          <div className="rounded-3xl border border-(--border) bg-(--surface) p-6 sm:p-8 md:p-12">
             <p className="eyebrow">05 / Repository</p>
 
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-5 text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
               Explore the implementation.
             </h2>
 
@@ -272,10 +284,10 @@ export default function ProjectOnePage() {
             </p>
 
             <a
-              href="https://github.com/Saif2246/CyberSecurity-Portfolio/tree/main/Project_1_Network_Reconnaissance_Database_Analyzer"
+              href={projectRepository}
               target="_blank"
               rel="noopener noreferrer"
-              className="button button-primary mt-8"
+              className="button button-primary mt-8 inline-flex min-h-11 touch-manipulation items-center justify-center gap-2"
             >
               Open Project Repository
               <span aria-hidden="true">↗</span>
@@ -283,10 +295,10 @@ export default function ProjectOnePage() {
           </div>
         </section>
 
-        <footer className="border-t border-(--border) py-10">
+        <footer className="border-t border-(--border) py-8 sm:py-10">
           <Link
             href="/#projects"
-            className="text-sm text-(--text-secondary) transition-colors hover:text-(--accent)"
+            className={`${touchLinkClass} text-sm text-(--text-secondary) transition-colors hover:text-(--accent)`}
           >
             ← Back to all projects
           </Link>

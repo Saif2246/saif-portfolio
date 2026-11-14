@@ -67,7 +67,7 @@ export default function Projects() {
               key={project.number}
               onPointerMove={handlePointerMove}
               onPointerLeave={handlePointerLeave}
-              className={`group relative isolate overflow-hidden rounded-2xl border border-(--border) bg-(--surface) p-7 transition-[transform,border-color,background-color,box-shadow] duration-300 ease-out hover:border-[rgba(34,211,238,0.4)] hover:bg-(--surface-hover) hover:shadow-[0_15px_35px_rgba(0,0,0,0.18)] md:p-8 ${
+              className={`group relative isolate overflow-hidden rounded-2xl border border-(--border) bg-(--surface) p-7 transition-[transform,border-color,background-color,box-shadow] duration-300 ease-out hover:border-[rgba(34,211,238,0.4)] hover:bg-(--surface-hover) hover:shadow-[0_15px_35px_rgba(0,0,0,0.18)] active:border-[rgba(34,211,238,0.4)] active:bg-(--surface-hover) active:shadow-[0_8px_24px_rgba(0,0,0,0.12)] md:p-8 ${
                 project.featured ? "md:col-span-2" : ""
               }`}
               style={{
@@ -77,7 +77,7 @@ export default function Projects() {
             >
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-active:opacity-100"
                 style={{
                   background:
                     "radial-gradient(450px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(34,211,238,0.09), transparent 65%)",
@@ -129,7 +129,7 @@ export default function Projects() {
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-(--text-primary) transition-colors group-hover:text-(--accent)"
+                  className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-(--text-primary) transition-all duration-200 group-hover:text-(--accent) active:scale-[0.97] active:text-(--accent) focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)"
                 >
                   View Project
 

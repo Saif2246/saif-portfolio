@@ -49,9 +49,9 @@ export default function SecurityLab() {
           {capabilities.map((capability) => (
             <article
               key={capability.number}
-              className="group relative overflow-hidden rounded-2xl border border-(--border) bg-(--surface) p-7 transition-all duration-300 hover:-translate-y-1 hover:border-(--border-hover) hover:bg-(--surface-hover) md:p-8"
+              className="group relative overflow-hidden rounded-2xl border border-(--border) bg-(--surface) p-7 transition-all duration-300 hover:-translate-y-1 hover:border-(--border-hover) hover:bg-(--surface-hover) active:translate-y-0 active:border-(--border-hover) active:bg-(--surface-hover) md:p-8 motion-reduce:transition-none"
             >
-              <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-(--accent) opacity-[0.03] blur-2xl transition-opacity duration-300 group-hover:opacity-[0.08]" />
+              <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-(--accent) opacity-[0.03] blur-2xl transition-opacity duration-300 group-hover:opacity-[0.08] group-active:opacity-[0.08]" />
 
               <div className="relative">
                 <div className="flex items-center justify-between">
@@ -72,7 +72,7 @@ export default function SecurityLab() {
                   {capability.description}
                 </p>
 
-                <div className="mt-7 h-px w-12 bg-(--border-hover) transition-all duration-300 group-hover:w-20 group-hover:bg-(--accent)" />
+                <div className="mt-7 h-px w-12 bg-(--border-hover) transition-all duration-300 group-hover:w-20 group-hover:bg-(--accent) group-active:w-20 group-active:bg-(--accent)" />
               </div>
             </article>
           ))}

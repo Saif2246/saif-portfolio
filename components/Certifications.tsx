@@ -34,7 +34,7 @@ export default function Certifications() {
         </div>
 
         <div className="mt-12 max-w-4xl">
-          <article className="group rounded-2xl border border-(--border) bg-(--surface) p-6 transition-colors duration-200 hover:border-(--border-hover) sm:p-8">
+          <article className="group rounded-2xl border border-(--border) bg-(--surface) p-6 transition-all duration-300 hover:border-(--border-hover) hover:bg-(--surface-hover) active:border-(--border-hover) active:bg-(--surface-hover) motion-reduce:transition-none sm:p-8">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
               <div className="max-w-2xl">
                 <div className="mb-5 flex flex-wrap items-center gap-3">
@@ -87,7 +87,7 @@ export default function Certifications() {
                     href={certificate.certificateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="button button-primary"
+                    className="button button-primary min-h-11 transition-transform duration-200 active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)"
                   >
                     View Certificate
                     <span aria-hidden="true">↗</span>
@@ -97,7 +97,7 @@ export default function Certifications() {
                     href={certificate.verificationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="button button-secondary"
+                    className="button button-secondary min-h-11 transition-transform duration-200 active:scale-[0.97] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)"
                   >
                     Verify Credential
                     <span aria-hidden="true">↗</span>

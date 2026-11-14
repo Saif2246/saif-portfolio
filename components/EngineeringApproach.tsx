@@ -50,14 +50,14 @@ export default function EngineeringApproach() {
           {principles.map((principle) => (
             <article
               key={principle.number}
-              className="group rounded-2xl border border-(--border) bg-(--surface) p-6 transition-all duration-300 hover:-translate-y-1 hover:border-(--border-hover) hover:bg-(--surface-hover)"
+              className="group rounded-2xl border border-(--border) bg-(--surface) p-6 transition-all duration-300 hover:-translate-y-1 hover:border-(--border-hover) hover:bg-(--surface-hover) active:-translate-y-0.5 active:border-(--border-hover) active:bg-(--surface-hover) motion-reduce:transform-none motion-reduce:transition-none"
             >
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs text-(--accent)">
                   {principle.number}
                 </span>
 
-                <span className="h-px w-8 bg-(--border-hover) transition-all duration-300 group-hover:w-12 group-hover:bg-(--accent)" />
+                <span className="h-px w-8 bg-(--border-hover) transition-all duration-300 group-hover:w-12 group-hover:bg-(--accent) group-active:w-12 group-active:bg-(--accent)" />
               </div>
 
               <h3 className="mt-8 text-lg font-semibold tracking-tight text-(--text-primary)">

@@ -19,7 +19,7 @@ export default function Education() {
         </div>
 
         <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-          <article className="rounded-2xl border border-(--border) bg-(--surface) p-7 md:p-9">
+          <article className="rounded-2xl border border-(--border) bg-(--surface) p-7 transition-all duration-300 hover:border-(--border-hover) hover:bg-(--surface-hover) active:border-(--border-hover) active:bg-(--surface-hover) motion-reduce:transition-none md:p-9">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.16em] text-(--accent)">
@@ -50,7 +50,7 @@ export default function Education() {
             </div>
           </article>
 
-          <aside className="rounded-2xl border border-(--border) bg-(--surface-muted) p-7 md:p-9">
+          <aside className="rounded-2xl border border-(--border) bg-(--surface-muted) p-7 transition-all duration-300 hover:border-(--border-hover) hover:bg-(--surface-hover) active:border-(--border-hover) active:bg-(--surface-hover) motion-reduce:transition-none md:p-9">
             <p className="font-mono text-xs uppercase tracking-[0.16em] text-(--accent)">
               Current Direction
             </p>
@@ -74,7 +74,7 @@ export default function Education() {
               ].map((focus) => (
                 <div
                   key={focus}
-                  className="flex items-center gap-3 text-sm text-(--text-secondary)"
+                  className="flex items-center gap-3 text-sm text-(--text-secondary) transition-colors duration-200 active:text-(--accent)"
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-(--accent)" />
                   {focus}

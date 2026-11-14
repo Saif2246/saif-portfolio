@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     "KiroTrace analyzes user-provided local security logs using deterministic threat detection, event correlation, evidence-grounded RAG, and local AI assistance without external API dependencies.",
 };
 
+const touchLinkClass =
+  "inline-flex min-h-11 touch-manipulation items-center justify-center gap-2 rounded-md transition-colors active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)";
+
 const architectureSteps = [
   {
     number: "01",
@@ -74,30 +77,30 @@ export default function KiroTracePage() {
   return (
     <main className="min-h-screen bg-(--background) text-(--text-primary)">
       <div className="container">
-        <header className="border-b border-(--border) py-10">
+        <header className="border-b border-(--border) py-6 sm:py-10">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-sm text-(--text-secondary) transition-colors hover:text-(--accent)"
+            className={`${touchLinkClass} justify-start text-sm text-(--text-secondary) hover:text-(--accent)`}
           >
             <span aria-hidden="true">←</span>
             Back to Projects
           </Link>
         </header>
 
-        <section className="py-20 md:py-28">
+        <section className="py-14 sm:py-20 md:py-28">
           <p className="eyebrow">04 / Case Study</p>
 
           <div className="max-w-5xl">
-            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-(--text-primary) sm:text-5xl md:text-6xl">
+            <h1 className="mt-5 text-3xl font-semibold tracking-tight text-(--text-primary) sm:text-5xl md:text-6xl">
               KiroTrace
             </h1>
 
-            <p className="mt-5 max-w-3xl text-xl leading-8 text-(--text-secondary) md:text-2xl">
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-(--text-secondary) sm:text-xl md:text-2xl">
               Offline-Oriented SecOps Monitoring & AI-Assisted Security
               Analysis
             </p>
 
-            <p className="mt-7 max-w-3xl text-base leading-8 text-(--text-secondary)">
+            <p className="mt-7 max-w-3xl text-sm leading-7 text-(--text-secondary) sm:text-base sm:leading-8">
               KiroTrace is a local-data security monitoring and AI-assisted
               analysis system. Users provide security log files for parsing,
               threat detection, event correlation, evidence retrieval, and
@@ -120,29 +123,31 @@ export default function KiroTracePage() {
               ))}
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="https://github.com/Saif2246/CyberSecurity-Portfolio/tree/main/Cloud_SecOps_Log_Monitoring"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="button button-primary"
+                className="button button-primary min-h-11 touch-manipulation justify-center active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)"
               >
                 View Repository
                 <span aria-hidden="true">↗</span>
               </a>
 
-              <Link href="/#projects" className="button button-secondary">
+              <Link
+                href="/#projects"
+                className="button button-secondary min-h-11 touch-manipulation justify-center active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)"
+              >
                 All Projects
               </Link>
             </div>
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">01 / Overview</p>
-
               <h2 className="section-title">
                 A controlled pipeline for security telemetry and analysis.
               </h2>
@@ -155,7 +160,7 @@ export default function KiroTracePage() {
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
             {[
               {
                 title: "Detection",
@@ -180,7 +185,7 @@ export default function KiroTracePage() {
             ].map((item) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-(--border) bg-(--surface) p-7 md:p-8"
+                className="rounded-2xl border border-(--border) bg-(--surface) p-5 transition-colors duration-200 active:border-(--accent) sm:p-7 md:p-8"
               >
                 <h3 className="text-xl font-semibold tracking-tight">
                   {item.title}
@@ -194,11 +199,10 @@ export default function KiroTracePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">02 / Architecture</p>
-
               <h2 className="section-title">
                 From raw telemetry to controlled security assistance.
               </h2>
@@ -214,7 +218,7 @@ export default function KiroTracePage() {
             {architectureSteps.map((step) => (
               <article
                 key={step.number}
-                className="group grid gap-5 rounded-2xl border border-(--border) bg-(--surface) p-6 transition-all duration-300 hover:border-(--border-hover) md:grid-cols-[70px_220px_1fr] md:items-center md:p-7"
+                className="group grid gap-3 rounded-2xl border border-(--border) bg-(--surface) p-5 transition-colors duration-200 active:border-(--accent) hover:border-(--border-hover) sm:gap-5 sm:p-6 md:grid-cols-[70px_220px_1fr] md:items-center md:p-7"
               >
                 <span className="font-mono text-xs text-(--accent)">
                   {step.number}
@@ -232,11 +236,10 @@ export default function KiroTracePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">03 / Capabilities</p>
-
               <h2 className="section-title">
                 What the system demonstrates.
               </h2>
@@ -248,7 +251,7 @@ export default function KiroTracePage() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             {capabilities.map((capability) => (
               <span
                 key={capability}
@@ -260,11 +263,10 @@ export default function KiroTracePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
-          <div className="grid gap-10 lg:grid-cols-2">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
             <div>
               <p className="eyebrow">04 / Security Model</p>
-
               <h2 className="section-title">
                 Evidence first. Execution controlled.
               </h2>
@@ -293,11 +295,11 @@ export default function KiroTracePage() {
           </div>
         </section>
 
-        <section className="border-t border-(--border) py-20 md:py-24">
-          <div className="rounded-3xl border border-(--border) bg-(--surface) p-8 md:p-12">
+        <section className="border-t border-(--border) py-14 sm:py-20 md:py-24">
+          <div className="rounded-3xl border border-(--border) bg-(--surface) p-6 sm:p-8 md:p-12">
             <p className="eyebrow">05 / Repository</p>
 
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-5 text-2xl font-semibold tracking-tight sm:text-4xl">
               Explore the implementation.
             </h2>
 
@@ -311,7 +313,7 @@ export default function KiroTracePage() {
               href="https://github.com/Saif2246/CyberSecurity-Portfolio/tree/main/Cloud_SecOps_Log_Monitoring"
               target="_blank"
               rel="noopener noreferrer"
-              className="button button-primary mt-8"
+              className="button button-primary mt-8 min-h-11 touch-manipulation justify-center active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--accent)"
             >
               Open KiroTrace Repository
               <span aria-hidden="true">↗</span>
@@ -319,10 +321,10 @@ export default function KiroTracePage() {
           </div>
         </section>
 
-        <footer className="border-t border-(--border) py-10">
+        <footer className="border-t border-(--border) py-8 sm:py-10">
           <Link
             href="/#projects"
-            className="text-sm text-(--text-secondary) transition-colors hover:text-(--accent)"
+            className={`${touchLinkClass} justify-start text-sm text-(--text-secondary) hover:text-(--accent)`}
           >
             ← Back to all projects
           </Link>
