@@ -138,6 +138,7 @@ https://github.com/Saif2246/CyberSecurity-Portfolio/tree/main/Cloud_SecOps_Log_M
 
 The portfolio is built as a modern Next.js application using a component-based architecture.
 
+```text
 saif-portfolio/
 ├── app/
 │   ├── projects/
@@ -163,12 +164,13 @@ saif-portfolio/
 │   ├── SecurityFocus.tsx
 │   ├── SecurityLab.tsx
 │   └── Skills.tsx
+│
 ├── data/
 │   ├── projects.ts
 │   └── skills.ts
 │
 └── public/
-
+```
 ## Built With
 
 - Next.js 16
@@ -200,23 +202,26 @@ http://localhost:3000
 
 ## Production Validation
 
-The project has been validated with:
+The following checks were completed successfully:
 
+```bash
 npm run lint
 npm run typecheck
 npm run build
+```
 
 All checks completed successfully.
 
-The production build successfully generates these routes:
+Production routes:
 
+```text
 /
- /projects/project-1
- /projects/project-2
- /projects/project-3
- /projects/project-4
- /sitemap.xml
-
+/projects/project-1
+/projects/project-2
+/projects/project-3
+/projects/project-4
+/sitemap.xml
+```
 ## Education
 
 BS Information Technology
