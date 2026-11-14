@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const contactLinks = [
   {
@@ -22,34 +23,82 @@ const contactLinks = [
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  const copyToClipboard = async (text: string) => {
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        // Use fallback method.
+      }
+    }
+
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    textArea.style.opacity = "0";
+    textArea.style.pointerEvents = "none";
+
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    let successful = false;
+
+    try {
+      successful = document.execCommand("copy");
+    } catch {
+      successful = false;
+    }
+
+    document.body.removeChild(textArea);
+
+    return successful;
+  };
 
   const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText("saifaliikundi@gmail.com");
-      setCopied(true);
+    const success = await copyToClipboard("saifaliikundi@gmail.com");
 
-      window.setTimeout(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    setCopied(success);
+    setCopyError(!success);
+
+    if (success) {
+      timeoutRef.current = setTimeout(() => {
         setCopied(false);
+        timeoutRef.current = null;
       }, 2000);
-    } catch {
-      setCopied(false);
     }
   };
 
   return (
     <section id="contact" className="section">
       <div className="container">
-        <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-8 md:p-12">
+        <div className="rounded-3xl border border-(--border) bg-(--surface) p-8 md:p-12">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div>
               <p className="eyebrow">10 / Contact</p>
 
-              <h2 className="mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-4xl md:text-5xl">
+              <h2 className="mt-5 max-w-3xl text-3xl font-semibold tracking-tight text-(--text-primary) sm:text-4xl md:text-5xl">
                 Let&apos;s connect around security, engineering, and
                 opportunities.
               </h2>
 
-              <p className="mt-6 max-w-2xl text-sm leading-7 text-[var(--text-secondary)] md:text-base">
+              <p className="mt-6 max-w-2xl text-sm leading-7 text-(--text-secondary) md:text-base">
                 I&apos;m interested in practical security engineering,
                 cloud security, GRC, and opportunities where I can continue
                 building real-world technical experience.
@@ -64,7 +113,7 @@ export default function Contact() {
                 return (
                   <div
                     key={link.label}
-                    className="group flex items-center justify-between rounded-xl border border-[var(--border)] bg-[var(--background)] px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--border-hover)]"
+                    className="group flex items-center justify-between rounded-xl border border-(--border) bg-(--background) px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-(--border-hover)"
                   >
                     <a
                       href={link.href}
@@ -72,11 +121,11 @@ export default function Contact() {
                       rel={isExternal ? "noopener noreferrer" : undefined}
                       className="min-w-0 flex-1"
                     >
-                      <p className="text-sm font-medium text-[var(--text-primary)]">
+                      <p className="text-sm font-medium text-(--text-primary)">
                         {link.label}
                       </p>
 
-                      <p className="mt-1 truncate text-xs text-[var(--text-muted)]">
+                      <p className="mt-1 truncate text-xs text-(--text-muted)">
                         {link.value}
                       </p>
                     </a>
@@ -85,15 +134,15 @@ export default function Contact() {
                       <button
                         type="button"
                         onClick={handleCopyEmail}
-                        className="ml-4 shrink-0 rounded-lg border border-[var(--border)] px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-[var(--text-muted)] transition-all duration-300 hover:border-[var(--border-hover)] hover:text-[var(--accent)]"
+                        className="ml-4 shrink-0 rounded-lg border border-(--border) px-3 py-2 font-mono text-[10px] uppercase tracking-wider text-(--text-muted) transition-all duration-300 hover:border-(--border-hover) hover:text-(--accent)"
                         aria-label="Copy email address"
                       >
-                        {copied ? "Copied" : "Copy"}
+                        {copied ? "Copied" : copyError ? "Retry" : "Copy"}
                       </button>
                     ) : (
                       <span
                         aria-hidden="true"
-                        className="ml-4 shrink-0 text-[var(--text-muted)] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[var(--accent)]"
+                        className="ml-4 shrink-0 text-(--text-muted) transition-all duration-300 group-hover:translate-x-1 group-hover:text-(--accent)"
                       >
                         ↗
                       </span>
@@ -103,6 +152,14 @@ export default function Contact() {
               })}
             </div>
           </div>
+
+          <p className="sr-only" aria-live="polite" aria-atomic="true">
+            {copied
+              ? "Email address copied to clipboard."
+              : copyError
+                ? "Unable to copy email address."
+                : ""}
+          </p>
         </div>
       </div>
     </section>

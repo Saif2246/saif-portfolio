@@ -112,7 +112,7 @@ export const projects: Project[] = [
     title: "KiroTrace",
     category: "SecOps / AI Security",
     description:
-      "An offline-oriented SecOps monitoring and AI-assisted security analysis system featuring log aggregation, normalization, threat detection, event correlation, evidence-grounded RAG, controlled security tools, Docker sandboxing, and audit logging.",
+      "A local-first SecOps monitoring and AI-assisted security analysis system featuring log aggregation, normalization, threat detection, event correlation, evidence-grounded RAG, controlled security tools, Docker sandboxing, and audit logging.",
     technologies: [
       "Python",
       "Streamlit",

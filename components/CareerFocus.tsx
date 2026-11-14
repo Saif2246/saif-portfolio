@@ -1,3 +1,4 @@
+
 const opportunities = [
   {
     number: "01",
@@ -30,19 +31,19 @@ export default function CareerFocus() {
   return (
     <section
       id="career"
-      className="border-t border-[var(--border)] py-24 md:py-32"
+      className="border-t border-(--border) py-24 md:py-32"
     >
       <div className="container">
         <div className="max-w-3xl">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]">
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-(--accent)">
             09 / Career Focus
           </p>
 
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-[var(--text-primary)] sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-(--text-primary) sm:text-4xl">
             Building toward a career in security engineering.
           </h2>
 
-          <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
+          <p className="mt-5 max-w-2xl text-base leading-8 text-(--text-secondary)">
             I am focused on developing practical experience across cloud
             security, security operations, and governance, risk, and
             compliance while continuing to build security systems that solve
@@ -54,30 +55,30 @@ export default function CareerFocus() {
           {opportunities.map((opportunity) => (
             <article
               key={opportunity.number}
-              className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-colors duration-200 hover:border-[var(--border-hover)]"
+              className="rounded-2xl border border-(--border) bg-(--surface) p-6 transition-colors duration-200 hover:border-(--border-hover)"
             >
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-[var(--text-muted)]">
+                <span className="font-mono text-xs text-(--text-muted)">
                   {opportunity.number}
                 </span>
 
-                <span className="h-2 w-2 rounded-full bg-[var(--success)]" />
+                <span className="h-2 w-2 rounded-full bg-(--success)" />
               </div>
 
-              <h3 className="mt-8 text-xl font-semibold tracking-tight text-[var(--text-primary)]">
+              <h3 className="mt-8 text-xl font-semibold tracking-tight text-(--text-primary)">
                 {opportunity.title}
               </h3>
 
-              <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">
+              <p className="mt-4 text-sm leading-7 text-(--text-secondary)">
                 {opportunity.description}
               </p>
             </article>
           ))}
         </div>
 
-        <div className="mt-8 grid gap-8 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="mt-8 grid gap-8 rounded-2xl border border-(--border) bg-(--surface) p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.14em] text-[var(--text-muted)]">
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-(--text-muted)">
               What I bring
             </p>
 
@@ -85,11 +86,11 @@ export default function CareerFocus() {
               {strengths.map((strength) => (
                 <div
                   key={strength}
-                  className="flex items-center gap-3 text-sm text-[var(--text-secondary)]"
+                  className="flex items-center gap-3 text-sm text-(--text-secondary)"
                 >
                   <span
                     aria-hidden="true"
-                    className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]"
+                    className="h-1.5 w-1.5 rounded-full bg-(--accent)"
                   />
 
                   <span>{strength}</span>

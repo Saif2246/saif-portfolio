@@ -7,7 +7,7 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     title: "Programming",
-    description: "Languages and tools used for security-focused development.",
+    description: "Programming languages, databases, and tools used for security-focused development.",
     skills: ["Python", "C++", "Java", "MySQL"],
   },
   {
@@ -24,7 +24,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Cloud & Infrastructure",
     description:
-      "Foundational infrastructure and cloud-security concepts for secure system design.",
+      "Cloud security, infrastructure, networking, and access-control fundamentals.",
     skills: [
       "Cloud Security",
       "Linux",

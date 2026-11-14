@@ -1,3 +1,4 @@
+
 const principles = [
   {
     number: "01",
@@ -49,21 +50,21 @@ export default function EngineeringApproach() {
           {principles.map((principle) => (
             <article
               key={principle.number}
-              className="group rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]"
+              className="group rounded-2xl border border-(--border) bg-(--surface) p-6 transition-all duration-300 hover:-translate-y-1 hover:border-(--border-hover) hover:bg-(--surface-hover)"
             >
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-[var(--accent)]">
+                <span className="font-mono text-xs text-(--accent)">
                   {principle.number}
                 </span>
 
-                <span className="h-px w-8 bg-[var(--border-hover)] transition-all duration-300 group-hover:w-12 group-hover:bg-[var(--accent)]" />
+                <span className="h-px w-8 bg-(--border-hover) transition-all duration-300 group-hover:w-12 group-hover:bg-(--accent)" />
               </div>
 
-              <h3 className="mt-8 text-lg font-semibold tracking-tight text-[var(--text-primary)]">
+              <h3 className="mt-8 text-lg font-semibold tracking-tight text-(--text-primary)">
                 {principle.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">
+              <p className="mt-3 text-sm leading-7 text-(--text-secondary)">
                 {principle.description}
               </p>
             </article>

@@ -21,9 +21,9 @@ This repository contains the source code for my personal portfolio website and s
 
 ### KiroTrace
 
-Offline-Oriented SecOps Monitoring & AI-Assisted Security Analysis
+Local-First SecOps Monitoring & AI-Assisted Security Analysis
 
-KiroTrace is a defensive security monitoring and AI-assisted analysis system designed around local telemetry, evidence grounding, controlled tool execution, audit logging, and session-aware security assistance.
+KiroTrace is a local-first SecOps monitoring and AI-assisted security analysis system designed around local telemetry processing, evidence grounding, controlled tool execution, Docker sandboxing, audit logging, and session-aware security assistance.
 
 Key capabilities:
 
@@ -85,8 +85,7 @@ Repository:
 https://github.com/Saif2246/CyberSecurity-Portfolio/tree/main/Project_3_Automated_Firewall_ACL_Auditor
 
 ### 04 — KiroTrace
-
-An offline-oriented SecOps monitoring and AI-assisted security analysis system combining security telemetry processing, threat detection, event correlation, evidence-grounded RAG, controlled security tools, Docker sandboxing, and audit logging.
+A local-first SecOps monitoring and AI-assisted security analysis system combining security telemetry processing, threat detection, event correlation, evidence-grounded RAG, controlled security tools, Docker sandboxing, and audit logging.
 
 Technologies:
 
@@ -102,6 +101,9 @@ https://github.com/Saif2246/CyberSecurity-Portfolio/tree/main/Cloud_SecOps_Log_M
 - Python
 - C++
 - Java
+
+### Databases
+
 - MySQL
 
 ### Security
@@ -148,6 +150,8 @@ saif-portfolio/
 │   └── page.tsx
 │
 ├── components/
+│   ├── CareerFocus.tsx
+│   ├── Certifications.tsx
 │   ├── Contact.tsx
 │   ├── Education.tsx
 │   ├── EngineeringApproach.tsx
@@ -159,7 +163,6 @@ saif-portfolio/
 │   ├── SecurityFocus.tsx
 │   ├── SecurityLab.tsx
 │   └── Skills.tsx
-│
 ├── data/
 │   ├── projects.ts
 │   └── skills.ts
@@ -168,12 +171,12 @@ saif-portfolio/
 
 ## Built With
 
-- Next.js
-- React
+- Next.js 16
+- React 19
 - TypeScript
-- Tailwind CSS
+- Tailwind CSS v4
 - ESLint
-- Next Font
+- Geist Font via next/font
 
 ## Local Development
 
@@ -200,8 +203,10 @@ http://localhost:3000
 The project has been validated with:
 
 npm run lint
-
+npm run typecheck
 npm run build
+
+All checks completed successfully.
 
 The production build successfully generates these routes:
 
@@ -210,6 +215,7 @@ The production build successfully generates these routes:
  /projects/project-2
  /projects/project-3
  /projects/project-4
+ /sitemap.xml
 
 ## Education
 

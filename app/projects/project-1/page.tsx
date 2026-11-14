@@ -1,4 +1,10 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Network Reconnaissance & Database Analyzer | Saif Ali",
+  description:
+    "Explore a Python-based network security project using Nmap reconnaissance, XML parsing, port and service analysis, and MariaDB integration.",
+};
 const capabilities = [
   "Network reconnaissance automation",
   "Nmap XML output parsing",
@@ -40,16 +46,16 @@ const workflow = [
 
 export default function ProjectOnePage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
+    <main className="min-h-screen bg-(--background) text-(--text-primary)">
       <div className="container">
-        <header className="border-b border-[var(--border)] py-10">
-           <Link
-    href="/#projects"
-    className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]"
- >
-   <span aria-hidden="true">←</span>
-        Back to Projects
-        </Link>
+        <header className="border-b border-(--border) py-10">
+          <Link
+            href="/#projects"
+            className="inline-flex items-center gap-2 text-sm text-(--text-secondary) transition-colors hover:text-(--accent)"
+          >
+            <span aria-hidden="true">←</span>
+            Back to Projects
+          </Link>
         </header>
 
         <section className="py-20 md:py-28">
@@ -60,12 +66,12 @@ export default function ProjectOnePage() {
               Network Reconnaissance & Database Analyzer
             </h1>
 
-            <p className="mt-6 max-w-3xl text-xl leading-8 text-[var(--text-secondary)] md:text-2xl">
+            <p className="mt-6 max-w-3xl text-xl leading-8 text-(--text-secondary) md:text-2xl">
               Automated network reconnaissance, Nmap analysis, and structured
               security data processing.
             </p>
 
-            <p className="mt-7 max-w-3xl text-base leading-8 text-[var(--text-secondary)]">
+            <p className="mt-7 max-w-3xl text-base leading-8 text-(--text-secondary)">
               A Python-based network security project focused on automating
               reconnaissance workflows, parsing Nmap XML results, analyzing
               discovered ports and services, and storing structured scan data
@@ -95,12 +101,12 @@ export default function ProjectOnePage() {
 
               <Link href="/#projects" className="button button-secondary">
                 All Projects
-             </Link>
+              </Link>
             </div>
           </div>
         </section>
 
-        <section className="border-t border-[var(--border)] py-20 md:py-24">
+        <section className="border-t border-(--border) py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">01 / Overview</p>
@@ -142,13 +148,13 @@ export default function ProjectOnePage() {
             ].map((item) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 md:p-8"
+                className="rounded-2xl border border-(--border) bg-(--surface) p-7 md:p-8"
               >
                 <h3 className="text-xl font-semibold tracking-tight">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">
+                <p className="mt-3 text-sm leading-7 text-(--text-secondary)">
                   {item.description}
                 </p>
               </article>
@@ -156,7 +162,7 @@ export default function ProjectOnePage() {
           </div>
         </section>
 
-        <section className="border-t border-[var(--border)] py-20 md:py-24">
+        <section className="border-t border-(--border) py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">02 / Workflow</p>
@@ -176,9 +182,9 @@ export default function ProjectOnePage() {
             {workflow.map((step) => (
               <article
                 key={step.number}
-                className="grid gap-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 md:grid-cols-[70px_240px_1fr] md:items-center md:p-7"
+                className="grid gap-5 rounded-2xl border border-(--border) bg-(--surface) p-6 md:grid-cols-[70px_240px_1fr] md:items-center md:p-7"
               >
-                <span className="font-mono text-xs text-[var(--accent)]">
+                <span className="font-mono text-xs text-(--accent)">
                   {step.number}
                 </span>
 
@@ -186,7 +192,7 @@ export default function ProjectOnePage() {
                   {step.title}
                 </h3>
 
-                <p className="text-sm leading-7 text-[var(--text-secondary)]">
+                <p className="text-sm leading-7 text-(--text-secondary)">
                   {step.description}
                 </p>
               </article>
@@ -194,7 +200,7 @@ export default function ProjectOnePage() {
           </div>
         </section>
 
-        <section className="border-t border-[var(--border)] py-20 md:py-24">
+        <section className="border-t border-(--border) py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">03 / Capabilities</p>
@@ -214,7 +220,7 @@ export default function ProjectOnePage() {
             {capabilities.map((capability) => (
               <span
                 key={capability}
-                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--text-secondary)]"
+                className="rounded-xl border border-(--border) bg-(--surface) px-4 py-3 text-sm text-(--text-secondary)"
               >
                 {capability}
               </span>
@@ -222,7 +228,7 @@ export default function ProjectOnePage() {
           </div>
         </section>
 
-        <section className="border-t border-[var(--border)] py-20 md:py-24">
+        <section className="border-t border-(--border) py-20 md:py-24">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <p className="eyebrow">04 / Technical Focus</p>
@@ -232,7 +238,7 @@ export default function ProjectOnePage() {
               </h2>
             </div>
 
-            <div className="space-y-6 text-sm leading-7 text-[var(--text-secondary)]">
+            <div className="space-y-6 text-sm leading-7 text-(--text-secondary)">
               <p>
                 The project focuses on reducing repetitive reconnaissance and
                 analysis work through Python-based automation.
@@ -252,15 +258,15 @@ export default function ProjectOnePage() {
           </div>
         </section>
 
-        <section className="border-t border-[var(--border)] py-20 md:py-24">
-          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-8 md:p-12">
+        <section className="border-t border-(--border) py-20 md:py-24">
+          <div className="rounded-3xl border border-(--border) bg-(--surface) p-8 md:p-12">
             <p className="eyebrow">05 / Repository</p>
 
             <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
               Explore the implementation.
             </h2>
 
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-[var(--text-secondary)]">
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-(--text-secondary)">
               View the complete project implementation, source code, and
               supporting files in the CyberSecurity Portfolio repository.
             </p>
@@ -277,13 +283,13 @@ export default function ProjectOnePage() {
           </div>
         </section>
 
-        <footer className="border-t border-[var(--border)] py-10">
-           <Link
-         href="/#projects"
-        className="text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]"
-  >
-     ← Back to all projects
-     </Link>
+        <footer className="border-t border-(--border) py-10">
+          <Link
+            href="/#projects"
+            className="text-sm text-(--text-secondary) transition-colors hover:text-(--accent)"
+          >
+            ← Back to all projects
+          </Link>
         </footer>
       </div>
     </main>

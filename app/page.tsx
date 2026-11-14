@@ -14,7 +14,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[var(--background)] text-[var(--text-primary)]">
+    <div className="min-h-screen overflow-x-hidden bg-(--background) text-(--text-primary)">
       <Navbar />
 
       <main>

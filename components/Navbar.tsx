@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -9,17 +10,16 @@ const navItems = [
   { label: "Education", href: "#education" },
   { label: "Career", href: "#career" },
   { label: "Contact", href: "#contact" },
-
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[rgba(7,11,18,0.82)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-(--border) bg-[rgba(7,11,18,0.82)] backdrop-blur-xl">
       <div className="container">
         <nav
-          className="flex min-h-[72px] items-center justify-between"
+          className="flex min-h-18 items-center justify-between"
           aria-label="Primary navigation"
         >
           <a
@@ -28,11 +28,11 @@ export default function Navbar() {
             aria-label="Saif Ali home"
             onClick={() => setIsOpen(false)}
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface)] font-mono text-sm font-semibold text-[var(--accent)] transition-colors group-hover:border-[var(--accent)]">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-(--border) bg-(--surface) font-mono text-sm font-semibold text-(--accent) transition-colors group-hover:border-(--accent)">
               SA
             </span>
 
-            <span className="hidden text-sm font-semibold tracking-tight text-[var(--text-primary)] sm:block">
+            <span className="hidden text-sm font-semibold tracking-tight text-(--text-primary) sm:block">
               Saif Ali
             </span>
           </a>
@@ -42,7 +42,7 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+                className="text-sm font-medium text-(--text-secondary) transition-colors hover:text-(--text-primary)"
               >
                 {item.label}
               </a>
@@ -71,9 +71,10 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--text-primary)] transition-colors hover:border-[var(--border-hover)] md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-(--border) text-(--text-primary) transition-colors hover:border-(--border-hover) md:hidden"
             aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
             onClick={() => setIsOpen(!isOpen)}
           >
             <span className="sr-only">
@@ -103,14 +104,17 @@ export default function Navbar() {
         </nav>
 
         {isOpen && (
-          <div className="border-t border-[var(--border)] py-4 md:hidden">
+          <div
+            id="mobile-navigation"
+            className="border-t border-(--border) py-4 md:hidden"
+          >
             <div className="flex flex-col">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="border-b border-[var(--border)] py-3 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+                  className="border-b border-(--border) py-3 text-sm font-medium text-(--text-secondary) transition-colors hover:text-(--text-primary)"
                 >
                   {item.label}
                 </a>

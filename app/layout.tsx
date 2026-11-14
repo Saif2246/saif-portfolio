@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -59,6 +60,14 @@ export const metadata: Metadata = {
     description:
       "Portfolio of Saif Ali — BS Information Technology student focused on Cloud Security, GRC, Security Engineering, and practical security systems.",
     siteName: "Saif Ali",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Saif Ali — Cloud Security and GRC Portfolio",
+      },
+    ],
   },
 
   twitter: {
@@ -66,12 +75,26 @@ export const metadata: Metadata = {
     title: "Saif Ali | Cloud Security & GRC",
     description:
       "BS Information Technology student focused on Cloud Security, GRC, Security Operations, and AI-assisted security analysis.",
+    images: ["/images/og-image.png"],
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#070b12",
 };
 
 export default function RootLayout({

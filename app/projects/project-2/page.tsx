@@ -1,5 +1,11 @@
-import Link from "next/link";
 
+import Link from "next/link";
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Network Service Enumeration Tool | Saif Ali",
+  description:
+    "A Python-based network service enumeration tool featuring TCP port scanning, multithreading, service identification, and banner grabbing.",
+};
 const capabilities = [
   "TCP port scanning",
   "Socket programming",
@@ -54,12 +60,12 @@ const workflow = [
 
 export default function ProjectTwoPage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
+    <main className="min-h-screen bg-(--background) text-(--text-primary)">
       <div className="container">
-        <header className="border-b border-[var(--border)] py-10">
+        <header className="border-b border-(--border) py-10">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]"
+            className="inline-flex items-center gap-2 text-sm text-(--text-secondary) transition-colors hover:text-(--accent)"
           >
             <span aria-hidden="true">←</span>
             Back to Projects
@@ -67,19 +73,19 @@ export default function ProjectTwoPage() {
         </header>
 
         <section className="py-20 md:py-28">
-          <p className="eyebrow">03 / Case Study</p>
+          <p className="eyebrow">02 / Case Study</p>
 
           <div className="max-w-5xl">
             <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
               Network Service Enumeration Tool
             </h1>
 
-            <p className="mt-6 max-w-3xl text-xl leading-8 text-[var(--text-secondary)] md:text-2xl">
+            <p className="mt-6 max-w-3xl text-xl leading-8 text-(--text-secondary) md:text-2xl">
               TCP scanning, service identification, multithreaded enumeration,
               and banner grabbing.
             </p>
 
-            <p className="mt-7 max-w-3xl text-base leading-8 text-[var(--text-secondary)]">
+            <p className="mt-7 max-w-3xl text-base leading-8 text-(--text-secondary)">
               A Python command-line security tool focused on network service
               enumeration through TCP socket programming, multithreaded
               scanning, service identification, and banner grabbing.
@@ -116,7 +122,7 @@ export default function ProjectTwoPage() {
           </div>
         </section>
 
-        <section className="border-t border-[var(--border)] py-20 md:py-24">
+        <section className="border-t border-(--border) py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">01 / Overview</p>
@@ -158,13 +164,13 @@ export default function ProjectTwoPage() {
             ].map((item) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 md:p-8"
+                className="rounded-2xl border border-(--border) bg-(--surface) p-7 md:p-8"
               >
                 <h3 className="text-xl font-semibold tracking-tight">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">
+                <p className="mt-3 text-sm leading-7 text-(--text-secondary)">
                   {item.description}
                 </p>
               </article>
@@ -172,7 +178,7 @@ export default function ProjectTwoPage() {
           </div>
         </section>
 
-        <section className="border-t border-[var(--border)] py-20 md:py-24">
+        <section className="border-t border-(--border) py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">02 / Workflow</p>
@@ -192,9 +198,9 @@ export default function ProjectTwoPage() {
             {workflow.map((step) => (
               <article
                 key={step.number}
-                className="grid gap-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 md:grid-cols-[70px_240px_1fr] md:items-center md:p-7"
+                className="grid gap-5 rounded-2xl border border-(--border) bg-(--surface) p-6 md:grid-cols-[70px_240px_1fr] md:items-center md:p-7"
               >
-                <span className="font-mono text-xs text-[var(--accent)]">
+                <span className="font-mono text-xs text-(--accent)">
                   {step.number}
                 </span>
 
@@ -202,7 +208,7 @@ export default function ProjectTwoPage() {
                   {step.title}
                 </h3>
 
-                <p className="text-sm leading-7 text-[var(--text-secondary)]">
+                <p className="text-sm leading-7 text-(--text-secondary)">
                   {step.description}
                 </p>
               </article>
@@ -210,7 +216,7 @@ export default function ProjectTwoPage() {
           </div>
         </section>
 
-        <section className="border-t border-[var(--border)] py-20 md:py-24">
+        <section className="border-t border-(--border) py-20 md:py-24">
           <div className="section-heading">
             <div>
               <p className="eyebrow">03 / Capabilities</p>
@@ -230,7 +236,7 @@ export default function ProjectTwoPage() {
             {capabilities.map((capability) => (
               <span
                 key={capability}
-                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--text-secondary)]"
+                className="rounded-xl border border-(--border) bg-(--surface) px-4 py-3 text-sm text-(--text-secondary)"
               >
                 {capability}
               </span>
@@ -238,7 +244,7 @@ export default function ProjectTwoPage() {
           </div>
         </section>
 
-        <section className="border-t border-[var(--border)] py-20 md:py-24">
+        <section className="border-t border-(--border) py-20 md:py-24">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
               <p className="eyebrow">04 / Technical Focus</p>
@@ -248,7 +254,7 @@ export default function ProjectTwoPage() {
               </h2>
             </div>
 
-            <div className="space-y-6 text-sm leading-7 text-[var(--text-secondary)]">
+            <div className="space-y-6 text-sm leading-7 text-(--text-secondary)">
               <p>
                 The project uses Python socket programming to interact with
                 network services and identify accessible TCP ports.
@@ -268,15 +274,15 @@ export default function ProjectTwoPage() {
           </div>
         </section>
 
-        <section className="border-t border-[var(--border)] py-20 md:py-24">
-          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-8 md:p-12">
+        <section className="border-t border-(--border) py-20 md:py-24">
+          <div className="rounded-3xl border border-(--border) bg-(--surface) p-8 md:p-12">
             <p className="eyebrow">05 / Repository</p>
 
             <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
               Explore the implementation.
             </h2>
 
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-[var(--text-secondary)]">
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-(--text-secondary)">
               View the complete source code and supporting project files in
               the CyberSecurity Portfolio repository.
             </p>
@@ -293,10 +299,10 @@ export default function ProjectTwoPage() {
           </div>
         </section>
 
-        <footer className="border-t border-[var(--border)] py-10">
+        <footer className="border-t border-(--border) py-10">
           <Link
             href="/#projects"
-            className="text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]"
+            className="text-sm text-(--text-secondary) transition-colors hover:text-(--accent)"
           >
             ← Back to all projects
           </Link>

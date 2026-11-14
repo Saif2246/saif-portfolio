@@ -1,13 +1,14 @@
+
 export default function Footer() {
   return (
-    <footer className="border-t border-[var(--border)]">
+    <footer className="border-t border-(--border)">
       <div className="container flex flex-col gap-4 py-8 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm font-medium text-[var(--text-primary)]">
+          <p className="text-sm font-medium text-(--text-primary)">
             Saif Ali
           </p>
 
-          <p className="mt-1 text-xs text-[var(--text-muted)]">
+          <p className="mt-1 text-xs text-(--text-muted)">
             Information Technology Student · Cloud Security & GRC
           </p>
         </div>
@@ -17,7 +18,7 @@ export default function Footer() {
             href="https://github.com/Saif2246"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+            className="text-xs text-(--text-muted) transition-colors hover:text-(--text-primary)"
           >
             GitHub
           </a>
@@ -26,12 +27,12 @@ export default function Footer() {
             href="https://www.linkedin.com/in/saif-ali-a22230409/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+            className="text-xs text-(--text-muted) transition-colors hover:text-(--text-primary)"
           >
             LinkedIn
           </a>
 
-          <span className="text-xs text-[var(--text-muted)]">
+          <span className="text-xs text-(--text-muted)">
             © {new Date().getFullYear()}
           </span>
         </div>

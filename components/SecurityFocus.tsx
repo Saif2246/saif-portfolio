@@ -1,3 +1,4 @@
+
 const securityAreas = [
   {
     number: "01",
@@ -27,12 +28,19 @@ const securityAreas = [
 
 export default function SecurityFocus() {
   return (
-    <section id="about" className="section">
+    <section
+      id="about"
+      className="section"
+      aria-labelledby="security-focus-title"
+    >
       <div className="container">
         <div className="section-heading">
           <div>
             <p className="eyebrow">01 / Security Focus</p>
-            <h2 className="section-title">
+            <h2
+              id="security-focus-title"
+              className="section-title"
+            >
               Security engineering with a practical mindset.
             </h2>
           </div>
@@ -44,25 +52,25 @@ export default function SecurityFocus() {
           </p>
         </div>
 
-        <div className="grid gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2">
+        <div className="grid gap-px overflow-hidden rounded-2xl border border-(--border) bg-(--border) sm:grid-cols-2">
           {securityAreas.map((area) => (
             <article
               key={area.number}
-              className="bg-[var(--surface)] p-7 transition-colors hover:bg-[var(--surface-hover)] md:p-8"
+              className="bg-(--surface) p-7 transition-colors hover:bg-(--surface-hover) md:p-8"
             >
               <div className="mb-8 flex items-center justify-between">
-                <span className="font-mono text-xs text-[var(--accent)]">
+                <span className="font-mono text-xs text-(--accent)">
                   {area.number}
                 </span>
 
-                <span className="h-px w-10 bg-[var(--border-hover)]" />
+                <span className="h-px w-10 bg-(--border-hover)" />
               </div>
 
-              <h3 className="text-xl font-semibold tracking-tight text-[var(--text-primary)]">
+              <h3 className="text-xl font-semibold tracking-tight text-(--text-primary)">
                 {area.title}
               </h3>
 
-              <p className="mt-4 text-sm leading-7 text-[var(--text-secondary)]">
+              <p className="mt-4 text-sm leading-7 text-(--text-secondary)">
                 {area.description}
               </p>
             </article>

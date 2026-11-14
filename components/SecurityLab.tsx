@@ -1,3 +1,4 @@
+
 const capabilities = [
   {
     number: "01",
@@ -48,50 +49,50 @@ export default function SecurityLab() {
           {capabilities.map((capability) => (
             <article
               key={capability.number}
-              className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)] md:p-8"
+              className="group relative overflow-hidden rounded-2xl border border-(--border) bg-(--surface) p-7 transition-all duration-300 hover:-translate-y-1 hover:border-(--border-hover) hover:bg-(--surface-hover) md:p-8"
             >
-              <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-[var(--accent)] opacity-[0.03] blur-2xl transition-opacity duration-300 group-hover:opacity-[0.08]" />
+              <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-(--accent) opacity-[0.03] blur-2xl transition-opacity duration-300 group-hover:opacity-[0.08]" />
 
               <div className="relative">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-[var(--accent)]">
+                  <span className="font-mono text-xs text-(--accent)">
                     {capability.number}
                   </span>
 
-                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-(--text-muted)">
                     Lab
                   </span>
                 </div>
 
-                <h3 className="mt-8 text-xl font-semibold tracking-tight text-[var(--text-primary)]">
+                <h3 className="mt-8 text-xl font-semibold tracking-tight text-(--text-primary)">
                   {capability.title}
                 </h3>
 
-                <p className="mt-4 max-w-xl text-sm leading-7 text-[var(--text-secondary)]">
+                <p className="mt-4 max-w-xl text-sm leading-7 text-(--text-secondary)">
                   {capability.description}
                 </p>
 
-                <div className="mt-7 h-px w-12 bg-[var(--border-hover)] transition-all duration-300 group-hover:w-20 group-hover:bg-[var(--accent)]" />
+                <div className="mt-7 h-px w-12 bg-(--border-hover) transition-all duration-300 group-hover:w-20 group-hover:bg-(--accent)" />
               </div>
             </article>
           ))}
         </div>
 
-        <div className="mt-5 rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] p-7 md:p-8">
+        <div className="mt-5 rounded-2xl border border-(--border) bg-(--surface-muted) p-7 md:p-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--accent)]">
+              <p className="font-mono text-xs uppercase tracking-[0.16em] text-(--accent)">
                 Build → Test → Refine
               </p>
 
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--text-secondary)]">
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-(--text-secondary)">
                 Every project is treated as an engineering exercise: define
                 the problem, implement the controls, test the behavior, and
                 improve the system based on what the results reveal.
               </p>
             </div>
 
-            <span className="shrink-0 font-mono text-xs text-[var(--text-muted)]">
+            <span className="shrink-0 font-mono text-xs text-(--text-muted)">
               PRACTICAL / DEFENSIVE / ITERATIVE
             </span>
           </div>
